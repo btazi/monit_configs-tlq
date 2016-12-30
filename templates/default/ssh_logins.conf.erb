@@ -2,4 +2,4 @@ check file ssh_logins with path /var/log/auth.log
      # Ignore login's from whitelist ip addresses
      # ignore match "100.100.100.1"    
      # Else, alert
-     if match "Accepted publickey" then alert
+     if match "Accepted publickey" then exec "<%= node['monit_configs-tlq']['ruby_path'] %> /etc/monit/slack.rb"
