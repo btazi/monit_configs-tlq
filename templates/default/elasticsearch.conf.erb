@@ -3,5 +3,4 @@ check process elasticsearch with pidfile /var/run/elasticsearch/elasticsearch.pi
    stop  program = "/etc/init.d/elasticsearch stop"
    if 5 restarts within 5 cycles then timeout
 	 if 5 restarts within 5 cycles then alert
-	 if 5 restarts within 5 cycles then  exec "<%= node['monit_configs-tlq']['ruby_path'] %> /etc/monit/slack.rb"
    if failed host 127.0.0.1 port 9200 protocol http then restart

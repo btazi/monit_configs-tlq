@@ -4,4 +4,4 @@ check process postgresql with pidfile <%= node['monit_configs-tlq']['postgres'][
   start program = "/etc/init.d/postgresql start"
   stop program = "/etc/init.d/postgresql stop"
   if 15 restarts within 15 cycles then timeout
-	if 15 restarts within 15 cycles then exec "<%= node['monit_configs-tlq']['ruby_path'] %> /etc/monit/slack.rb"
+	if 15 restarts within 15 cycles then alert

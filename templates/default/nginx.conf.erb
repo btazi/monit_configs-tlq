@@ -5,5 +5,5 @@ check process nginx with pidfile /var/run/nginx.pid
   stop program = "/etc/init.d/nginx stop"
   if failed host 127.0.0.1 port 80 then restart
   if 15 restarts within 15 cycles then timeout
-  if 15 restarts within 15 cycles then exec "<%= node['monit_configs-tlq']['ruby_path'] %> /etc/monit/slack.rb"
+  if 15 restarts within 15 cycles then alert
   if 15 restarts within 15 cycles then timeout
